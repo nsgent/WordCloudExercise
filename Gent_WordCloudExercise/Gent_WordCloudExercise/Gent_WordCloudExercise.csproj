@@ -7,8 +7,8 @@
     <ProjectGuid>{C4CAFDD8-433A-44CE-B2E5-5A9D8E695DE3}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Gent_WordCloudExercies</RootNamespace>
-    <AssemblyName>Gent_WordCloudExercies</AssemblyName>
+    <RootNamespace>Gent_WordCloudExercise</RootNamespace>
+    <AssemblyName>Gent_WordCloudExercise</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Utilities\UtilityMethods.cs" />
+    <Compile Include="Utilities\Properties.cs" />
     <Compile Include="WordCloudForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +67,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

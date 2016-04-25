@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gent_WordCloudExercies", "Gent_WordCloudExercies\Gent_WordCloudExercies.csproj", "{C4CAFDD8-433A-44CE-B2E5-5A9D8E695DE3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gent_WordCloudExercise", "Gent_WordCloudExercise\Gent_WordCloudExercise.csproj", "{C4CAFDD8-433A-44CE-B2E5-5A9D8E695DE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gent_WordCloudExercise.Test", "Gent_WordCloudExercise.Test\Gent_WordCloudExercise.Test.csproj", "{3EE49F01-6174-4E16-8726-858313E6D4EE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{C4CAFDD8-433A-44CE-B2E5-5A9D8E695DE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4CAFDD8-433A-44CE-B2E5-5A9D8E695DE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4CAFDD8-433A-44CE-B2E5-5A9D8E695DE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EE49F01-6174-4E16-8726-858313E6D4EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EE49F01-6174-4E16-8726-858313E6D4EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EE49F01-6174-4E16-8726-858313E6D4EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EE49F01-6174-4E16-8726-858313E6D4EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

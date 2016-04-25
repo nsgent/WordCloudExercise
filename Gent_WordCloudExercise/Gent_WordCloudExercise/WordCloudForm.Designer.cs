@@ -68,6 +68,7 @@
             // 
             this.openFileDialog.FileName = "WordCloudExample.txt";
             this.openFileDialog.Filter = "Text files (*.txt)|*.txt";
+            this.openFileDialog.InitialDirectory = "\\WordCloudExamples";
             this.openFileDialog.ShowReadOnly = true;
             this.openFileDialog.Title = "Select file to analyze";
             // 
