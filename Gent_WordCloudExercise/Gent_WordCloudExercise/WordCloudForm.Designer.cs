@@ -1,4 +1,4 @@
-﻿namespace Gent_WordCloudExercies
+﻿namespace Gent_WordCloudExercise
 {
     partial class WordCloudForm
     {
@@ -32,6 +32,7 @@
             this.loadButton = new System.Windows.Forms.Button();
             this.filePathTextBox = new System.Windows.Forms.TextBox();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.messageLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // openButton
@@ -72,11 +73,21 @@
             this.openFileDialog.ShowReadOnly = true;
             this.openFileDialog.Title = "Select file to analyze";
             // 
+            // messageLabel
+            // 
+            this.messageLabel.AutoSize = true;
+            this.messageLabel.Location = new System.Drawing.Point(12, 59);
+            this.messageLabel.Name = "messageLabel";
+            this.messageLabel.Size = new System.Drawing.Size(0, 17);
+            this.messageLabel.TabIndex = 3;
+            this.messageLabel.Visible = false;
+            // 
             // WordCloudForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(532, 253);
+            this.ClientSize = new System.Drawing.Size(532, 123);
+            this.Controls.Add(this.messageLabel);
             this.Controls.Add(this.filePathTextBox);
             this.Controls.Add(this.loadButton);
             this.Controls.Add(this.openButton);
@@ -94,6 +105,7 @@
         private System.Windows.Forms.Button loadButton;
         private System.Windows.Forms.TextBox filePathTextBox;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.Label messageLabel;
     }
 }
 

@@ -1,25 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Gent_WordCloudExercies.Utilities;
+using Gent_WordCloudExercise.Utilities;
 
-namespace Gent_WordCloudExercies
+namespace Gent_WordCloudExercise
 {
     public partial class WordCloudForm : Form
     {
+        internal string OutputFile { get; }
+
         public WordCloudForm()
         {
             InitializeComponent();
             openFileDialog.InitialDirectory = Path.Combine(Application.StartupPath, @"..\..\..\..\WordCloudExamples");
+            OutputFile = "results.txt";
         }
 
         internal void openButton_Click(object sender, EventArgs e)
@@ -65,7 +62,7 @@ namespace Gent_WordCloudExercies
                     }
                 }
 
-                using (var sr = new StreamWriter("results.txt"))
+                using (var sr = new StreamWriter(OutputFile))
                 {
                     foreach (KeyValuePair<string, int> wordCount in wordDictionary)
                     {

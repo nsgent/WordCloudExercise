@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Resources;
-using System.Text;
-using System.Threading.Tasks;
-using Gent_WordCloudExercies.Properties;
+﻿using Gent_WordCloudExercise.Properties;
 
-namespace Gent_WordCloudExercies.Utilities
+namespace Gent_WordCloudExercise.Utilities
 {
     public static class Properties
     {

@@ -235,3 +235,4 @@ _Pvt_Extensions
 # FAKE - F# Make
 .fake/
 /WordCloudExamples/results.txt
+/Gent_WordCloudExercise/Gent_WordCloudExercise.Test/TestExamples/results.txt

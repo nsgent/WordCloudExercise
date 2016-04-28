@@ -1,4 +1,4 @@
-﻿namespace Gent_WordCloudExercies.Utilities
+﻿namespace Gent_WordCloudExercise.Utilities
 {
     public static class UtilityMethods
     {

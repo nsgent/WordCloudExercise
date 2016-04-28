@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Gent_WordCloudExercies.Properties {
+namespace Gent_WordCloudExercise.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace Gent_WordCloudExercies.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Gent_WordCloudExercies.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Gent_WordCloudExercise.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,7 +61,7 @@ namespace Gent_WordCloudExercies.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a,an,the,it,us,them,i.
+        ///   Looks up a localized string similar to a,an,the,it,us,them,i,of,in,is.
         /// </summary>
         internal static string filterStrings {
             get {
