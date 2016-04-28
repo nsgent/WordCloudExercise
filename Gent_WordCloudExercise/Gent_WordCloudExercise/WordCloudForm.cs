@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using Gent_WordCloudExercise.Properties;
 using Gent_WordCloudExercise.Utilities;
 
 namespace Gent_WordCloudExercise
@@ -11,6 +12,7 @@ namespace Gent_WordCloudExercise
     public partial class WordCloudForm : Form
     {
         internal string OutputFile { get; }
+        internal string FilePathDirectory => Path.GetDirectoryName(filePathTextBox.Text);
 
         public WordCloudForm()
         {
@@ -30,36 +32,53 @@ namespace Gent_WordCloudExercise
 
         internal void loadButton_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(filePathTextBox.Text))
+            messageLabel.Visible = true;
+            if (!string.IsNullOrEmpty(filePathTextBox.Text) && filePathTextBox.Text.EndsWith(".txt"))
             {
                 var wordDictionary = new Dictionary<string, int>();
-                using (var sr = new StreamReader(filePathTextBox.Text))
+
+                try
                 {
-                    //put entire file on one line
-                    string line = sr.ReadToEnd().Trim().ToLower().Replace("\r\n", " ");
-                    //replace potential multiple space with a single space
-                    line = Regex.Replace(line, @"\s+", " ");
-                    string[] words = line.Split(' ');
-
-                    foreach (string word in words)
+                    using (var sr = new StreamReader(filePathTextBox.Text))
                     {
-                        string nonPunctuationWord = UtilityMethods.RemovePunctuation(word);
+                        //put entire file on one line
+                        string line = sr.ReadToEnd().Trim().ToLower().Replace("\r\n", " ");
+                        //replace potential multiple space with a single space
+                        line = Regex.Replace(line, @"\s+", " ");
+                        string[] words = line.Split(' ');
 
-                        //checks word for empty string and against the words being filtered out
-                        if (nonPunctuationWord.Equals("") || Utilities.Properties.FilterStrings.Contains(nonPunctuationWord))
-                            continue;
+                        foreach (string word in words)
+                        {
+                            string nonPunctuationWord = UtilityMethods.RemovePunctuation(word);
 
-                        //if the dictionary contains the word already, increment the count
-                        //otherwise initialize the word starting with a count of 1
-                        if (wordDictionary.ContainsKey(nonPunctuationWord))
-                        {
-                            wordDictionary[nonPunctuationWord]++;
-                        }
-                        else
-                        {
-                            wordDictionary[nonPunctuationWord] = 1;
+                            //checks word for empty string and against the words being filtered out
+                            if (nonPunctuationWord.Equals("") ||
+                                Utilities.Properties.FilterStrings.Contains(nonPunctuationWord))
+                                continue;
+
+                            //if the dictionary contains the word already, increment the count
+                            //otherwise initialize the word starting with a count of 1
+                            if (wordDictionary.ContainsKey(nonPunctuationWord))
+                            {
+                                wordDictionary[nonPunctuationWord]++;
+                            }
+                            else
+                            {
+                                wordDictionary[nonPunctuationWord] = 1;
+                            }
                         }
                     }
+                }
+                catch (DirectoryNotFoundException)
+                {
+                    messageLabel.Text = Resources.fileNotFound;
+                    return;
+                }
+                catch (FileNotFoundException)
+                {
+
+                    messageLabel.Text = Resources.fileNotFound;
+                    return;
                 }
 
                 using (var sr = new StreamWriter(OutputFile))
@@ -69,6 +88,12 @@ namespace Gent_WordCloudExercise
                         sr.WriteLine("{0}: {1}", wordCount.Key, wordCount.Value);
                     }
                 }
+
+                messageLabel.Text = string.Format(Resources.resultsSuccess, FilePathDirectory);
+            }
+            else
+            {
+                messageLabel.Text = Resources.emptyOrNonTextFile;
             }
         }
 

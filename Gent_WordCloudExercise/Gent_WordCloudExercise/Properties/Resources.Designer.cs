@@ -61,11 +61,38 @@ namespace Gent_WordCloudExercise.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please enter a text file value in the text box..
+        /// </summary>
+        internal static string emptyOrNonTextFile {
+            get {
+                return ResourceManager.GetString("emptyOrNonTextFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to File not found. Please try again..
+        /// </summary>
+        internal static string fileNotFound {
+            get {
+                return ResourceManager.GetString("fileNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to a,an,the,it,us,them,i,of,in,is.
         /// </summary>
         internal static string filterStrings {
             get {
                 return ResourceManager.GetString("filterStrings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Check results.txt in {0} for the analysis..
+        /// </summary>
+        internal static string resultsSuccess {
+            get {
+                return ResourceManager.GetString("resultsSuccess", resourceCulture);
             }
         }
     }
